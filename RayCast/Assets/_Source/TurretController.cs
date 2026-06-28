@@ -110,7 +110,7 @@ public class TurretController : MonoBehaviour
         if (_mainCamera == null) return;
 
         Ray ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
-        Vector3 targetPoint = GetTargetPoint(ray); // используем ту же логику
+        Vector3 targetPoint = GetTargetPoint(ray);
 
         Gizmos.color = Color.red;
         Gizmos.DrawLine(transform.position, targetPoint);

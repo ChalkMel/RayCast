@@ -96,8 +96,6 @@ public class TurretController : MonoBehaviour
 
     private void Shoot()
     {
-        if (bulletPrefab == null || firePoint == null) return;
-
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         if (bullet.TryGetComponent(out Rigidbody rb))
         {
@@ -107,8 +105,6 @@ public class TurretController : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        if (_mainCamera == null) return;
-
         Ray ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
         Vector3 targetPoint = GetTargetPoint(ray);
 
